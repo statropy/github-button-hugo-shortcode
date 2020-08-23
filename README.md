@@ -6,6 +6,8 @@ Hugo shortcode for https://buttons.github.io/
 
 Add this shortcode to a [hugo](https://gohugo.io/) theme or project. Add the shortcode to a hugo page markdown to display a GitHub button on the page.
 
+[Read about how this shortcode was created at Statropy Software](https://statropy.com/blog/hugo-shortcode-github-button/)
+
 ## Usage
 
 {{< github_button button="<button_type>" user="<user_name>" >}}
@@ -78,23 +80,31 @@ Follow button and Follow button with followers count:
 
 ![follow](/img/follow-button.png)
 
-`{{< github_button button="follow" user="statropy" >}}`
+```
+{{< github_button button="follow" user="statropy" >}}
+```
 
 ![follow and count](/img/follow-count-button.png)
 
-`{{< github_button button="follow" user="statropy" count="true" >}}`
+```
+{{< github_button button="follow" user="statropy" count="true" >}}
+```
 
 A large Star button with stargazers count in dark theme:
 
 ![customized star](/img/star-large-dark-count-button.png)
 
-`{{< github_button button="follow" user="statropy" repo="github-button-hugo-shortcode" count="true" large="true" dark="true" >}}`
+```
+{{< github_button button="follow" user="statropy" repo="github-button-hugo-shortcode" count="true" large="true" dark="true" >}}
+```
 
 Download button for a branch named bugfix:
 
 ![download](/img/download-button.png)
 
-`{{< github_button button="download" user="statropy" repo="github-button-hugo-shortcode" branch="bugfix" >}}`
+```
+{{< github_button button="download" user="statropy" repo="github-button-hugo-shortcode" branch="bugfix" >}}
+```
 
 ## Install
 
