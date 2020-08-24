@@ -9,7 +9,7 @@
     {{ $aria_label = printf "Follow @%s on GitHub" (.Get "user") }}
     {{ $button_text = printf "Follow @%s" (.Get "user") }}
 {{else if eq $button "sponsor"}}
-    {{ $href = printf "sponsors/%s/" (.Get "user")}}
+    {{ $href = printf "sponsors/%s" (.Get "user")}}
     {{ $data_icon = "heart" }}
     {{ $aria_label = printf "Sponsor @%s on GitHub" (.Get "user") }}
     {{ $button_text = "Sponsor" }}
@@ -44,7 +44,24 @@
     {{ $data_icon = "download" }}
     {{ $aria_label = printf "Download %s/%s on GitHub" (.Get "user") (.Get "repo")}}
     {{ $button_text = "Download" }}
+{{else if eq $button "view"}}
+    {{ $href = printf "%s/%s" (.Get "user") (.Get "repo")}}
+    {{ $data_icon = "mark-github" }}
+    {{ $aria_label = printf "View %s/%s on GitHub" (.Get "user") (.Get "repo")}}
+    {{ $button_text = .Get "repo" }}
 {{end}}
+
+{{ with .Get "text" }}
+    {{ $button_text = . }}
+{{ end }}
+
+{{ with .Get "icon" }}
+    {{ $data_icon = . }}
+{{ end }}
+
+{{ with .Get "aria_label" }}
+    {{ $aria_label = . }}
+{{ end }}
 
 <a 
 class="github-button" 

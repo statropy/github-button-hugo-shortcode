@@ -31,6 +31,7 @@ This selects the type of button to display.
 - `template`
 - `issue`
 - `download`
+- `view`
 
 #### `user`
 
@@ -50,6 +51,7 @@ The GitHub repo for the button link.
 
 - Type: `string`, `true` to enable
 - Usage: `optional` for `follow`, `watch`, `star`, `fork`, `issue`
+- Default: `false`
 
 Attach the applicable number to the button for the specified type.
 
@@ -57,6 +59,7 @@ Attach the applicable number to the button for the specified type.
 
 - Type: `string`, `true` to enable
 - Usage: `optional`
+- Default: `false`
 
 Use the dark button theme if enabled, otherwise light theme.
 
@@ -64,6 +67,7 @@ Use the dark button theme if enabled, otherwise light theme.
 
 - Type: `string`, `true` to enable
 - Usage: `optional`
+- Default: `false`
 
 Use a larger button if enabled.
 
@@ -73,6 +77,46 @@ Use a larger button if enabled.
  - Default: `master`
 
 Specify a branch other than master for the download.
+
+#### `icon`
+ - Type: `string`
+ - Usage: `optional`
+
+Override the default icon for a button type. Valid icons are
+ - `mark-github`
+ - `heart`
+ - `eye`
+ - `star`
+ - `repo-forked`
+ - `repo-template`
+ - `issue-opened`
+ - `download`
+
+#### `text`
+ - Type: `string`
+ - Usage: `optional`
+
+Override the default button text for a button type.
+
+#### `aria_label`
+ - Type: `string`
+ - Usage: `optional`
+
+Override the default aria-label for a button type.
+
+## Defaults
+
+| button   | icon          | text              | path https://github.com             | aria-label                                |
+| -------- | ------------- | ----------------- | ----------------------------------- | ----------------------------------------- |
+| follow   | mark-github   | Follow @`user`    | /`user`                             | Follow @`user` on GitHub                  |
+| sponsor  | heart         | Sponsor           | /sponsors/`user`                    | Sponsor @`user` on GitHub                 |
+| watch    | eye           | Watch             | /`user`/`repo`/subscription         | Watch `user`/`repo` on GitHub             |
+| star     | star          | Star              | /`user`/`repo`                      | Star `user`/`repo` on GitHub              |
+| fork     | repo-forked   | Fork              | /`user`/`repo`/fork                 | Fork `user`/`repo` on GitHub              |
+| template | repo-template | Use this template | /`user`/`repo`/generate             | Use this template `user`/`repo` on GitHub |
+| issue    | issue-opened  | Issue             | /`user`/`repo`/issues               | Issue `user`/`repo` on GitHub             |
+| download | download      | Download          | /`user`/`repo`/archive/`branch`.zip | Download `user`/`repo` on GitHub          |
+| view     | mark-github   | `repo`            | /`user`/`repo`                      | View `user`/`repo` on GitHub              |
 
 ## Examples
 
@@ -119,6 +163,7 @@ All buttons:
 {{< github_button button="template" user="statropy" repo="github-button-hugo-shortcode" >}}
 {{< github_button button="issue"    user="statropy" repo="github-button-hugo-shortcode" count="true" >}}
 {{< github_button button="download" user="statropy" repo="github-button-hugo-shortcode" >}}
+{{< github_button button="view"     user="statropy" repo="github-button-hugo-shortcode" >}}
 ```
 
 ## Install
